@@ -1,0 +1,53 @@
+.randomMealContent{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .randomMealContent{
+        
+        &-image{
+            @include xs{
+                height: auto;
+            }
+            @include md{
+                height: 300px;
+            }
+        }
+        &-title{
+            @include xs{
+                font-size: $fontSize-lg;
+                line-height: 1;
+            }
+            @include sm{
+                font-size: $fontSize-xl;
+            }
+            @include md{
+                font-size: $fontSize-xxl;
+            }
+        }
+        &-body{
+            @include xs{
+                font-size: $fontSize-sm;
+            }
+            @include sm{
+                font-size: $fontSize-md;
+            }
+        }
+        &-btn{
+            background-color: inherit;
+            border: $border-thickness solid $color1;
+            transition: $transition;
+            letter-spacing: 3px;
+            @include xs{
+                font-size: $fontSize-sm;
+            }
+            @include sm{
+                font-size: $fontSize-md;
+            }
+            &:hover{
+                background-color: $bg2;
+            }
+        }
+    }
+}

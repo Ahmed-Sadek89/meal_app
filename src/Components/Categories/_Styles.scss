@@ -1,0 +1,19 @@
+.categories{
+    .categoryContent{
+        cursor: pointer;
+        @include xs{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @include sm{
+            display: block;
+        }
+        transition: $transition;
+            &:hover {
+                transform: scale(1.1);
+        }
+        
+    }
+}

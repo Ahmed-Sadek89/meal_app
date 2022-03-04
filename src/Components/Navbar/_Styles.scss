@@ -1,0 +1,37 @@
+nav{
+    border-bottom: $border-thickness solid $color1;
+    .layout{
+        display: flex;
+        justify-content: space-between;
+        @include xs{
+            flex-direction: column;
+            align-items: baseline;
+        }
+        @include md{
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+    .links{
+        > *{
+            margin-left: $margin;
+            margin-right: $margin;
+            background-color: $bg3;
+            padding: $padding;
+            border-radius: $border-radius ;
+            transition: $transition;
+            text-align: center;
+            @include xs{
+                width: 100%;
+                margin-bottom: $margin;
+            }
+            @include sm{
+                width: auto;
+                margin-bottom: 0px
+            }
+            &:hover{
+                background-color: $color2;
+            }
+        }   
+    }
+}

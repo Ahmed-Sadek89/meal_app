@@ -1,0 +1,19 @@
+// here all the standerds
+@import 'variables';
+@import 'basics';
+@import 'media';
+@import 'grid';
+@import 'utilities';
+
+// here all components
+// @import '../../Components/Test/Styles'; // "_Page1.scss"
+@import '../../Components/Navbar/Styles'; 
+@import '../../Components/HomeMeal/Styles'; 
+@import '../../Components/Categories/Styles'; 
+@import '../../Components/RandomMeal/Styles'; 
+@import '../../Components/Footer/Styles'; 
+
+// here all general
+@import '../../General/Loading/Styles'; 
+@import '../../General/ItemsLoading/Styles'; 
+@import '../../General/OneItemLoading/Styles'; 

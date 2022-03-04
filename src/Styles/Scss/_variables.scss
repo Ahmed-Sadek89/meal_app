@@ -1,0 +1,63 @@
+@use 'sass:math';
+
+// color and backgrounds
+$color1: #fff;
+$color2: #f3b542;
+$bg1: #000;
+$bg2: #f3b542;
+$bg3: lighten(#000, 15);
+
+// font-size & font-weight
+$fontSize: 1rem;
+$fontSize-sm: $fontSize * 0.75;
+$fontSize-md: $fontSize;
+$fontSize-lg: $fontSize * 1.5;
+$fontSize-xl: $fontSize * 2;
+$fontSize-xxl: $fontSize * 3;
+
+$font-light: lighter;
+$font-regular: normal;
+$font-bold: bold;
+
+// display
+$display-none: none;
+$display-visible: block;
+
+// padding & margin
+$padding: 0.75rem;
+$margin: 0.75rem;
+
+// border
+$border-thickness: 1px;
+$border-radius: 10px;
+
+// box sizing 
+$box-sizing: border-box;
+
+// transition
+$transition: all 0.5s ease;
+
+// for grid
+$column-number: 12;
+
+@mixin columnStyles($iteration){
+    box-sizing: $box-sizing;
+    flex-grow: 0;
+    width: math.div(100% * $iteration, $column-number);
+}
+
+// for gapping and justifing content
+$gapping: (
+    "0": 0px,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+);
+
+$justify-content:
+    "flex-start",
+    "flex-end",
+    "center",
+    "space-around", 
+    "space-between", 
+    "space-evenly"

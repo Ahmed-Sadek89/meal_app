@@ -1,17 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {render} from 'react-dom';
+import { lazy, Suspense } from 'react';
+import './Styles/Css/Index.css';
+import { Provider } from 'react-redux';
+import Store from './Redux/Store';
+import Loading from './General/Loading/Loading';
+const App = lazy(() => import('./App'));
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+render(
+    <Suspense fallback={<Loading />}>
+        <Provider store={Store}>
+            <App />
+        </Provider>
+    </Suspense>,
+    document.getElementById('root')
+)

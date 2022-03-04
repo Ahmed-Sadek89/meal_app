@@ -1,0 +1,75 @@
+@use 'sass:math';
+// container & row
+.container{
+    box-sizing: $box-sizing;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0px 20px;
+    margin: 0px auto;
+}
+.row{
+    display: flex;
+    flex-flow: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+// all grid classes according to media_Screan
+@include xs{
+    @for $i from 1 through $column-number{
+        .col-xs-#{$i}{
+            @include columnStyles($i);
+        }
+    }
+}
+
+@include sm{
+    @for $i from 1 through $column-number{
+        .col-sm-#{$i}{
+            @include columnStyles($i)
+        }
+    }
+}
+
+@include md{
+    @for $i from 1 through $column-number{
+        .col-md-#{$i}{
+            @include columnStyles($i);
+        }
+    }
+}
+
+@include lg{
+    @for $i from 1 through $column-number{
+        .col-lg-#{$i}{
+            @include columnStyles($i);
+        }
+    }
+}
+
+@include xl{
+    @for $i from 1 through $column-number{
+        .col-xl-#{$i}{
+            @include columnStyles($i)
+        }
+    }
+}
+
+// gapping classes for gapping between elements
+@each $key, $val in $gapping {
+    .gap-#{$key} > *{
+        padding: $val
+    }
+    .gap-#{$key}{
+        margin: 0px -#{$val};
+    }
+}
+
+// justify content classes
+@each $val in $justify-content{
+    .justify-#{$val}{
+        display: flex;
+        justify-content: #{$val};
+        align-items: center;
+    }
+}

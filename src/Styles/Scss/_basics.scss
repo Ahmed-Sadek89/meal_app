@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0px;
+    color: inherit;
+}
+::selection{
+    color: $color2;
+    background-color: $bg1;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    background-color: $bg1;
+    color: $color1;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+input{
+    outline: none;
+    border: none;
+    transition: $transition;
+}
+
+img, .lazyLoading{
+    max-width: 100%;
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+input:focus, input:hover{
+    outline: $border-thickness * 2 solid $color2;
+}
+.content{
+    min-height: 85vh;
+    height: auto;
+}

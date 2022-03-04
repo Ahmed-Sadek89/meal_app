@@ -1,0 +1,37 @@
+$mediaScreen: (
+    "xs": 0px,
+    "sm": 480px,
+    "md": 720px,
+    "lg": 960px,
+    "xl": 1200px
+);
+
+@mixin xs{
+    @media(min-width: map-get($mediaScreen, "xs")){
+        @content;
+    }
+};
+
+@mixin sm{
+    @media(min-width: map-get($mediaScreen, "sm")){
+        @content;
+    }
+};
+
+@mixin md{
+    @media(min-width: map-get($mediaScreen, "md")){
+        @content;
+    }
+}
+
+@mixin lg{
+    @media(min-width: map-get($mediaScreen, "lg")){
+        @content;
+    }
+}
+
+@mixin xl{
+    @media(min-width: map-get($mediaScreen, "xl")){
+        @content;
+    }
+}

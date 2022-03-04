@@ -1,0 +1,33 @@
+.homeMeal{
+    form{
+        display: flex;
+        align-items: center;
+        @include xs{
+            flex-direction: column;  
+        }
+        @include sm{
+            flex-direction: row;
+            justify-content: center;
+            
+        }
+        input{
+            @include xs{
+                width: 100%; 
+                margin-bottom: $margin; 
+            }
+            @include md{
+                width: 50%;
+                margin-bottom: 0px; 
+            }
+        }
+    }
+    .mealContent{
+        .myMeal{
+            transition: $transition;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

@@ -1,0 +1,198 @@
+@use 'sass:math';
+
+$utilities: (
+    // $props -> "font-size", 
+    // $map -> "all data in font-size utility"
+    "font-size": (
+        "prefix": "f",
+        "values": (
+            "sm": $fontSize-sm,
+            "md": $fontSize-md,
+            "lg": $fontSize-lg,
+            "xl": $fontSize-xl,
+            "xxl": $fontSize-xxl,
+        )
+    ),
+
+    "font-weight": (
+        "prefix": 'f',
+        "values": (
+            "light": $font-light,
+            "regular": $font-regular,
+            "bold": $font-bold
+        ),
+    ),
+
+    "display": (
+        "prefix": "d",
+        "values": (
+            "none": $display-none,
+            "block": $display-visible
+        )
+    ),
+
+    "border-radius": (
+        "prefix": "b-radius", 
+        "values": (
+            "default": $border-radius,
+            "sm": math.div($border-radius, 0.25),
+            "md": math.div($border-radius, 1.5),
+            "lg": $border-radius * 2,
+            "full": 50%,
+        )
+    ),
+
+    "text-align": (
+        "prefix": "text", 
+        "values": (
+            "center": center,
+            "left": left,
+            "right": right,
+        )
+    ),
+
+    "color": (
+        "prefix": "color", 
+        "values": (
+            "1": $color1,
+            "2": $color2,
+        )
+    ),
+
+    "background-color": (
+        "prefix": "bg",
+        "values": (
+            "1": $bg1,
+            "2": $bg2, 
+            "3": $bg3,
+        )
+    ),
+
+    "margin": (
+        "prefix": "m", 
+        "values": (
+            "0": 0,
+            "1": $margin,
+            "2": $margin * 2,
+            "3": $margin * 4,
+            "4": $margin * 6,
+            "5": $margin * 8,
+        )  
+    ),
+    "margin-top": (
+        "prefix": "m-t", 
+        "values": (
+            "0": 0,
+            "1": $margin,
+            "2": $margin * 2,
+            "3": $margin * 4,
+            "4": $margin * 6,
+            "5": $margin * 8,
+        )  
+    ),
+    "margin-bottom": (
+        "prefix": "m-b", 
+        "values": (
+            "0": 0,
+            "1": $margin,
+            "2": $margin * 2,
+            "3": $margin * 4,
+            "4": $margin * 6,
+            "5": $margin * 8,
+        )  
+    ),
+    "margin-right": (
+        "prefix": "m-r", 
+        "values": (
+            "0": 0,
+            "1": $margin,
+            "2": $margin * 2,
+            "3": $margin * 4,
+            "4": $margin * 6,
+            "5": $margin * 8,
+        )  
+    ),
+    "margin-left": (
+        "prefix": "m-l", 
+        "values": (
+            "0": 0,
+            "1": $margin,
+            "2": $margin * 2,
+            "3": $margin * 4,
+            "4": $margin * 6,
+            "5": $margin * 8,
+        )  
+    ),
+
+    "padding": (
+        "prefix": "p", 
+        "values": (
+            "0": 0,
+            "1": $padding,
+            "2": $padding * 2,
+            "3": $padding * 4,
+            "4": $padding * 6,
+            "5": $padding * 8,
+        )  
+    ),
+    "padding-top": (
+        "prefix": "p-t", 
+        "values": (
+            "0": 0,
+            "1": $padding,
+            "2": $padding * 2,
+            "3": $padding * 4,
+            "4": $padding * 6,
+            "5": $padding * 8,
+        )  
+    ),
+    "padding-bottom": (
+        "prefix": "p-b", 
+        "values": (
+            "0": 0,
+            "1": $padding,
+            "2": $padding * 2,
+            "3": $padding * 4,
+            "4": $padding * 6,
+            "5": $padding * 8,
+        )  
+    ),
+    "padding-right": (
+        "prefix": "p-r", 
+        "values": (
+            "0": 0,
+            "1": $padding,
+            "2": $padding * 2,
+            "3": $padding * 4,
+            "4": $padding * 6,
+            "5": $padding * 8,
+        )  
+    ),
+    "padding-left": (
+        "prefix": "p-l", 
+        "values": (
+            "0": 0,
+            "1": $padding,
+            "2": $padding * 2,
+            "3": $padding * 4,
+            "4": $padding * 6,
+            "5": $padding * 8,
+        )  
+    ),
+
+);
+
+// get all utility classes
+@each $props, $map in $utilities{
+    $prefix: map-get($map, "prefix" );
+    $values: map-get($map, "values" );
+    // @debug $prefix;
+    // @debug $values;
+    @each $key, $val in $values{
+        .#{$prefix}-#{$key}{
+            #{$props}: #{$val}
+        }
+        // @debug $key -> console.log($key) ;
+        // @debug $val
+    }
+}
