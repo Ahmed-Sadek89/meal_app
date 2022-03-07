@@ -1,6 +1,5 @@
 // redux
-//import { applyMiddleware, combineReducers, createStore } from "redux";
-import {combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 
 // saga
 import createSagaMiddleware from "redux-saga";
@@ -11,7 +10,7 @@ import mealReducer from "./HomepageMeal/Reducer";
 import randomMealReducer from "./RandomMeal/Reducer";
 
 
-//const enhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+const enhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
 const rootReducer = combineReducers({
     meal: mealReducer,
@@ -21,13 +20,9 @@ const rootReducer = combineReducers({
 
 const sagaMiddleware = createSagaMiddleware();
 
-//const Store = createStore(
-//    rootReducer,
-//    enhancer(applyMiddleware(sagaMiddleware))
-//);
-
 const Store = createStore(
-    rootReducer
+   rootReducer,
+   enhancer(applyMiddleware(sagaMiddleware))
 );
 
 sagaMiddleware.run(Saga);
