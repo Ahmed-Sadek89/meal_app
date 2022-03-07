@@ -30,6 +30,6 @@ const Store = createStore(
     rootReducer
 );
 
-sagaMiddleware.run(Saga);
+//sagaMiddleware.run(Saga);
 
 export default Store;
